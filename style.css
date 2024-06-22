@@ -5,6 +5,7 @@
 body {
   padding: 0;
   margin: 0;
+  letter-spacing: 0.05rem;
   font-family: "Ubuntu", sans-serif;
 }
 /* root colors */
@@ -13,7 +14,7 @@ body {
   --label-color: #546464;
   --outline-color: #449393;
   --input-bg-color: #d1fafa68;
-  --btn-color: #0c6b68;
+  --btn-color: #09504e;
   --btn-hover-color: #6edad6b3;
 }
 
@@ -28,6 +29,7 @@ body {
 
 .title {
   letter-spacing: 0.4rem;
+  font-weight: bold;
   color: var(--label-color);
   margin-bottom: 2rem;
 }
@@ -38,12 +40,14 @@ body {
   background-color: #ffffff;
   display: flex;
   border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .section {
   padding: 1.5rem;
 }
 
+/*************** left-section ***************/
 .left-section {
   flex: 1;
   display: flex;
@@ -51,7 +55,6 @@ body {
   gap: 2rem;
   justify-content: space-between;
 }
-
 .bill-input {
   display: flex;
   flex-direction: column;
@@ -81,14 +84,12 @@ body {
   left: 10px;
   color: var(--outline-color);
 }
-
 .tips p {
   margin: 0;
   font-size: 0.9rem;
   color: var(--label-color);
   margin-bottom: 0.5rem;
 }
-
 .btns {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -112,11 +113,9 @@ body {
   background-color: var(--btn-hover-color);
   color: var(--btn-color);
 }
-
 .people-input {
   position: relative;
 }
-
 .people-input label {
   color: var(--label-color);
   display: block;
@@ -124,6 +123,75 @@ body {
   margin-bottom: 0.5rem;
 }
 
+/*************** right-section ***************/
 .right-section {
   flex: 1;
+  background-color: var(--btn-color);
+  margin: 1.25rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.text-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.text {
+  color: #fff;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.text-box p {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  color: var(--btn-hover-color);
+}
+
+.text span:last-child {
+  color: #cac9c9;
+  font-size: 0.75rem;
+}
+
+.right-section button {
+  border: 0;
+  border-radius: 0.25rem;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #449393;
+  color: #09504e;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.right-section button:hover {
+  background: var(--btn-hover-color);
+  color: var(--btn-color);
+}
+.right-section button:active {
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+  .inner-container {
+    flex-direction: column;
+    width: 85vw;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .inner-container {
+    flex-direction: column;
+    width: 100%;
+  }
 }
