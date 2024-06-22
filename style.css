@@ -1,0 +1,129 @@
+/* basic settings */
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+/* root colors */
+:root {
+  --bg-color: #d1fafa;
+  --label-color: #546464;
+  --outline-color: #449393;
+  --input-bg-color: #d1fafa68;
+  --btn-color: #0c6b68;
+  --btn-hover-color: #6edad6b3;
+}
+
+.outer-container {
+  height: 100vh;
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  letter-spacing: 0.4rem;
+  color: var(--label-color);
+  margin-bottom: 2rem;
+}
+
+.inner-container {
+  width: 70vw;
+  max-width: 1200px;
+  background-color: #ffffff;
+  display: flex;
+  border-radius: 1rem;
+}
+
+.section {
+  padding: 1.5rem;
+}
+
+.left-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.bill-input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.bill-input label {
+  font-size: 0.9rem;
+  color: var(--label-color);
+  margin-bottom: 0.5rem;
+}
+.bill-input input,
+.people-input input {
+  padding: 10px 15px;
+  width: 100%;
+  outline-color: var(--outline-color);
+  border: 0;
+  color: var(--outline-color);
+  background-color: var(--input-bg-color);
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: right;
+}
+.bill-input i,
+.people-input i {
+  position: absolute;
+  top: 60%;
+  left: 10px;
+  color: var(--outline-color);
+}
+
+.tips p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--label-color);
+  margin-bottom: 0.5rem;
+}
+
+.btns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+.btns button {
+  border: 0;
+  background-color: var(--btn-color);
+  padding: 10px;
+  border-radius: 0.25rem;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btns button:last-child {
+  background-color: var(--input-bg-color);
+  color: var(--label-color);
+}
+.btns button:hover {
+  background-color: var(--btn-hover-color);
+  color: var(--btn-color);
+}
+
+.people-input {
+  position: relative;
+}
+
+.people-input label {
+  color: var(--label-color);
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.right-section {
+  flex: 1;
+}

@@ -23,33 +23,43 @@
   </head>
   <body>
     <!-- outer container -->
-    <div id="outer-container">
+    <div class="outer-container">
+      <!-- title -->
+      <div class="title">
+        <p>SPLI</p>
+        <p>TTER</p>
+      </div>
       <!-- inner container -->
-      <div id="inner-container">
+      <div class="inner-container">
         <!-- left side -->
-        <div class="left-section">
+        <div class="section left-section">
           <!-- bill -->
           <div class="bill-input">
             <label for="bill">Bill</label>
             <input type="text" id="bill" />
+            <i class="fa-solid fa-dollar-sign"></i>
           </div>
           <!-- tips -->
           <div class="tips">
-            <button type="button">5%</button>
-            <button type="button">10%</button>
-            <button type="button">15%</button>
-            <button type="button">25%</button>
-            <button type="button">50%</button>
-            <button type="button">Custom</button>
+            <p>Select Tip %</p>
+            <div class="btns">
+              <button type="button">5%</button>
+              <button type="button">10%</button>
+              <button type="button">15%</button>
+              <button type="button">25%</button>
+              <button type="button">50%</button>
+              <button type="button">Custom</button>
+            </div>
           </div>
           <!-- people -->
           <div class="people-input">
             <label for="people">Number of People</label>
             <input type="text" id="people" />
+            <i class="fa-solid fa-user"></i>
           </div>
         </div>
         <!-- right side -->
-        <div class="right-section">
+        <div class="section right-section">
           <div class="text-container">
             <div class="text">
               <span>Tip Amount</span>
@@ -69,12 +79,6 @@
           <!-- reset button -->
           <button>RESET</button>
         </div>
-      </div>
-
-      <!-- position absolute title -->
-      <div class="title">
-        <p>SPLI</p>
-        <p>TTER</p>
       </div>
     </div>
   </body>
