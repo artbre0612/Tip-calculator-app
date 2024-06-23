@@ -74,6 +74,7 @@ body {
 .people-input input {
   padding: 10px 15px;
   width: 100%;
+  outline-style: solid;
   outline-color: var(--outline-color);
   border: 0;
   border-radius: 0.5rem;
@@ -101,11 +102,11 @@ body {
 }
 
 .tips .customTip {
+  outline-style: initial;
   outline-color: var(--outline-color);
   border: 0;
   text-align: center;
   -moz-appearance: textfield; /* Firefox */
-  -webkit-appearance: none;
 }
 .tips .customTip::-webkit-inner-spin-button,
 .tips .customTip::-webkit-outer-spin-button {
@@ -132,7 +133,8 @@ body {
   background-color: var(--input-bg-color);
   color: var(--label-color);
 }
-.btns input:hover {
+.btns input:hover,
+.btns input:focus {
   background-color: var(--btn-hover-color);
   color: var(--btn-color);
 }
