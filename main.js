@@ -13,6 +13,7 @@ const totalPerPerson = document.querySelector(".totalPerPerson");
 //輸入警告
 const peopleAlert = document.querySelector(".people-input span");
 const tipsAlert = document.querySelector(".tips span");
+const billAlert = document.querySelector(".billAlert");
 //Reset button
 const resetBtn = document.querySelector(".resetBtn");
 
@@ -51,7 +52,7 @@ inputBtn.forEach((input) => {
     tip = Number(input.value.replace("%", "")) / 100;
     tipsAlert.style.display = "none";
     removeActive();
-    if (bill.value && people.value) {
+    if (bill.value && people.value != 0) {
       getEvenTip();
       getEvenTotal();
     }
@@ -61,7 +62,7 @@ inputBtn.forEach((input) => {
 
 //輸入人數後觸發計算函式
 people.addEventListener("input", () => {
-  validation();
+  peopleValidation();
   if (people.value.trim().length === 0) {
     tipsAlert.style.display = "block";
     removeActive();
@@ -74,7 +75,14 @@ people.addEventListener("input", () => {
 });
 
 //綁定驗證
-bill.addEventListener("change", validation);
+//並判斷小費與人數欄位是否有值，有的話就再次運算
+bill.addEventListener("input", () => {
+  billValidation();
+  if (tip && people.value) {
+    getEvenTip();
+    getEvenTotal();
+  }
+});
 
 //客製化小費
 customTip.addEventListener("click", () => {
@@ -95,18 +103,28 @@ customTip.addEventListener("input", () => {
 });
 
 //表單驗證
-function validation() {
+function billValidation() {
   //金額輸入框驗證
-  if (bill.value !== "") {
+  if (bill.value > 0) {
     bill.style.border = "2px solid #449393";
+    billAlert.style.display = "none";
+  } else if (bill.value == 0) {
+    bill.style.outline = "0";
+    bill.style.border = "2px solid #fa5252";
+    billAlert.style.display = "block";
+    return;
   } else {
     bill.style.border = "0";
   }
+}
+
+function peopleValidation() {
   //人數輸入框驗證
-  if (!people.value) {
+  if (people.value == 0) {
     people.style.border = "2px solid #fa5252";
     people.style.outline = "0";
     peopleAlert.style.display = "block";
+    return;
   } else {
     people.style.border = "0";
     peopleAlert.style.display = "none";
