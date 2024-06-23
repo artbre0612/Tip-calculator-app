@@ -71,6 +71,7 @@ body {
   width: 100%;
   outline-color: var(--outline-color);
   border: 0;
+  border-radius: 0.5rem;
   color: var(--outline-color);
   background-color: var(--input-bg-color);
   font-weight: bold;
@@ -187,11 +188,33 @@ body {
     flex-direction: column;
     width: 85vw;
   }
+  .right-section {
+    gap: 2rem;
+  }
 }
 
 @media screen and (max-width: 576px) {
+  .title {
+    margin-bottom: 1rem;
+  }
   .inner-container {
     flex-direction: column;
-    width: 100%;
+    width: 95vw;
+  }
+  .btns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bill-input label,
+  .people-input label,
+  .tips p {
+    font-size: 1.25rem;
+  }
+  .bill-input input,
+  .people-input input {
+    padding: 15px 10px;
+  }
+  .btns button,
+  .right-section button {
+    padding: 15px;
   }
 }
