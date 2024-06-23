@@ -63,10 +63,7 @@ inputBtn.forEach((input) => {
 //輸入人數後觸發計算函式
 people.addEventListener("input", () => {
   peopleValidation();
-  if (people.value.trim().length === 0) {
-    tipsAlert.style.display = "block";
-    removeActive();
-    reset();
+  if (people.value == 0) {
     return;
   } else {
     getEvenTip();
