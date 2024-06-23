@@ -36,24 +36,24 @@
           <!-- bill -->
           <div class="bill-input">
             <label for="bill">Bill</label>
-            <input type="text" id="bill" />
+            <input type="text" id="bill" autofocus/>
             <i class="fa-solid fa-dollar-sign"></i>
           </div>
           <!-- tips -->
           <div class="tips">
-            <p>Select Tip %</p>
+            <p>Select Tip %</p><span>Choose a tip</span>
             <div class="btns">
-              <button type="button">5%</button>
-              <button type="button">10%</button>
-              <button type="button">15%</button>
-              <button type="button">25%</button>
-              <button type="button">50%</button>
-              <button type="button">Custom</button>
+              <input type="button" value=5% placeholder="5"></input>
+              <input type="button" value=10%></input>
+              <input type="button" value=15%></input>
+              <input type="button" value=25%></input>
+              <input type="button" value=50%></input>
+              <input class="customTip" type="button" value="Custom"></input>
             </div>
           </div>
           <!-- people -->
           <div class="people-input">
-            <label for="people">Number of People</label>
+            <label for="people">Number of People</label><span>Can't be zero</span>
             <input type="text" id="people" />
             <i class="fa-solid fa-user"></i>
           </div>
@@ -66,7 +66,7 @@
                 <span>Tip Amount</span>
                 <span>/ person</span>
               </div>
-              <p>$0.00</p>
+              <p class="tipPerPerson">$ 0</p>
             </div>
 
             <div class="text-box">
@@ -74,12 +74,12 @@
                 <span>Total</span>
                 <span>/ person</span>
               </div>
-              <p>$0.00</p>
+              <p class="totalPerPerson">$ 0</p>
             </div>
           </div>
 
           <!-- reset button -->
-          <button>RESET</button>
+          <button class="resetBtn">RESET</button>
         </div>
       </div>
     </div>

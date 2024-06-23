@@ -17,6 +17,11 @@ body {
   --btn-color: #09504e;
   --btn-hover-color: #6edad6b3;
 }
+/* status calss*/
+.btns input.active {
+  background-color: var(--bg-color);
+  color: var(--btn-color);
+}
 
 .outer-container {
   height: 100vh;
@@ -85,18 +90,34 @@ body {
   left: 10px;
   color: var(--outline-color);
 }
+.tips {
+  position: relative;
+}
 .tips p {
   margin: 0;
   font-size: 0.9rem;
   color: var(--label-color);
   margin-bottom: 0.5rem;
 }
+
+.tips .customTip {
+  outline-color: var(--outline-color);
+  border: 0;
+  text-align: center;
+  -moz-appearance: textfield; /* Firefox */
+  -webkit-appearance: none;
+}
+.tips .customTip::-webkit-inner-spin-button,
+.tips .customTip::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .btns {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
   gap: 0.5rem;
 }
-.btns button {
+.btns input {
   border: 0;
   background-color: var(--btn-color);
   padding: 10px;
@@ -105,17 +126,26 @@ body {
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
+  transition: 0.2s;
 }
-.btns button:last-child {
+.btns input:last-child {
   background-color: var(--input-bg-color);
   color: var(--label-color);
 }
-.btns button:hover {
+.btns input:hover {
   background-color: var(--btn-hover-color);
   color: var(--btn-color);
 }
 .people-input {
   position: relative;
+}
+.tips span,
+.people-input span {
+  color: #fa5252;
+  position: absolute;
+  top: 3px;
+  right: 0;
+  display: none;
 }
 .people-input label {
   color: var(--label-color);
@@ -174,6 +204,7 @@ body {
   background-color: #449393;
   color: #09504e;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
 }
 .right-section button:hover {
   background: var(--btn-hover-color);
@@ -193,7 +224,7 @@ body {
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 480px) {
   .title {
     margin-bottom: 1rem;
   }
@@ -202,7 +233,7 @@ body {
     width: 95vw;
   }
   .btns {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   }
   .bill-input label,
   .people-input label,
